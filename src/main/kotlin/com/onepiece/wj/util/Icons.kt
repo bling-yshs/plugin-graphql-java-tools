@@ -10,7 +10,7 @@ import javax.swing.Icon
 enum class Icons(val icon: Icon) {
 
     GQL_LINE_MARKER(getIcon("/images/go.png", Icons::class.java)),
-    Java_LINE_MARKER(getIcon("/images/return.png", Icons::class.java)),
+    JAVA_LINE_MARKER(getIcon("/images/return.png", Icons::class.java)),
     ;
 
 }

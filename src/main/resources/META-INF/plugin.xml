@@ -13,26 +13,20 @@
        Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
        Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
   <description><![CDATA[
-    Graphql-Java-Tools <br/>
-        Graphql-Java-Tools Plugins is a plugin that enhances idea support for GraphQL Java.</br>
-        Here is the main functions:</br>
-        <ul>
-            <li>navigate from the graphql Query/Mutation to Java Resolver and from the Resolver back to graphql.</li>
-        </ul>
+    <p><strong>Graphql-Java-Tools</strong> Plugins is a plugin that enhances idea support for GraphQL Java.</p>
 
-        Free Graphql-Java-Tools 是一款增强IDEA对GraphQL Java支持的插件。<br/>
-        主要功能如下：<br/>
-        <ul>
-            <li>快速从graphql Query/Mutation跳转到Java的Resolver方法及从方法返回到graphql文件</li>
-        </ul>
+    <h4>Here is the main functions:</h4>
+    <ul><li>navigate from the graphql Query/Mutation to Java Resolver and from the Resolver back to graphql.</li></ul>
 
-        Getting Started <br/>
-        <ul>
-            <li>Open the graphql file and click the arrow on the left to jump to the Java Resolver Method.</li>
-            <li>Open the Java Resolver class file and click the arrow on the left to jump to the graphql file.</li>
-        </ul>
+    <p><strong>Graphql-Java-Tools</strong> 是一款增强IDEA对GraphQL Java支持的插件。</p>
 
-        Thanks for the Free MyBatis Tool @wuzhizhan @moztl
+    <h4>主要功能如下：</h4>
+    <ul><li>快速从graphql Query/Mutation跳转到Java的Resolver方法及从方法返回到graphql文件</li></ul>
+
+    <h3>Getting Started</h3>
+    <ul><li>Open the <strong>graphql</strong> file and click the arrow on the left to jump to the <strong>Java</strong> Resolver Method.</li><li>Open the <strong>Java</strong> Resolver class file and click the arrow on the left to jump to the <strong>graphql</strong> file.</li></ul>
+
+    <p><em><strong>Thanks for the contribution of <a href="https://github.com/moztl/Free-Mybatis-Tool">Free MyBatis Tool</a> @moztl @wuzhizhan</strong></em></p>
   ]]></description>
 
   <!-- Product and plugin compatibility requirements.
@@ -44,6 +38,7 @@
   <!-- Extension points defined by the plugin.
        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
+
     <codeInsight.lineMarkerProvider language="GraphQL"
                                     implementationClass="com.onepiece.wj.provider.GraphqlLineMarkerProvider"/>
 

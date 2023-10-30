@@ -9,7 +9,6 @@ import com.intellij.psi.search.searches.ClassInheritorsSearch
 import com.intellij.psi.util.elementType
 import com.onepiece.wj.util.Icons
 import com.onepiece.wj.util.capitalizeFirstLetter
-import java.net.URLConnection
 import javax.swing.Icon
 
 
@@ -22,8 +21,8 @@ class GraphqlLineMarkerProvider : SimpleLineMarkerProvider<PsiMethod>() {
 
     override fun isTheElement(element: PsiElement): Boolean {
         if (element is LeafPsiElement
-            && element.elementType.debugName.equals("NAME")
-            && element.parent.parent.elementType?.debugName.equals("FIELD_DEFINITION")
+            && element.elementType.toString() == "NAME"
+            && element.parent.parent.elementType?.toString() == "FIELD_DEFINITION"
         ) {
             return true
         }

@@ -65,6 +65,6 @@ class ResolverLineMarkerProvider : SimpleLineMarkerProvider<PsiNamedElement>() {
     }
 
     override fun getIcon(): Icon {
-        return Icons.Java_LINE_MARKER.icon
+        return Icons.JAVA_LINE_MARKER.icon
     }
 }

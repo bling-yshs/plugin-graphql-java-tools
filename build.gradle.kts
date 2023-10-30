@@ -1,11 +1,16 @@
+import org.jetbrains.changelog.markdownToHTML
+
+fun properties(key: String) = providers.gradleProperty(key).get()
+
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.0"
     id("org.jetbrains.intellij") version "1.16.0"
+    id("org.jetbrains.changelog") version "2.2.0"
 }
 
 group = "com.onepiece.wj"
-version = "1.0-SNAPSHOT"
+version = properties("plugin.version")
 
 repositories {
     maven(url = "https://maven.aliyun.com/repository/public/")
@@ -22,6 +27,12 @@ intellij {
     plugins.set(listOf("com.intellij.java", "com.intellij.lang.jsgraphql:4.0.2"))
 }
 
+changelog {
+//    groups.empty()
+    repositoryUrl = properties("plugin.repository.url")
+    version = properties("plugin.version")
+}
+
 tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
@@ -35,6 +46,19 @@ tasks {
     patchPluginXml {
         sinceBuild.set("232")
         untilBuild.set("233.*")
+
+        // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
+        pluginDescription = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
+            val start = "<!-- Plugin description -->"
+            val end = "<!-- Plugin description end -->"
+
+            with (it.lines()) {
+                if (!containsAll(listOf(start, end))) {
+                    throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
+                }
+                subList(indexOf(start) + 1, indexOf(end)).joinToString("\n").let(::markdownToHTML)
+            }
+        }
     }
 
     signPlugin {
