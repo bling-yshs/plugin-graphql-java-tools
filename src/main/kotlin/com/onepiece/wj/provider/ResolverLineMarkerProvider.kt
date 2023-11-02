@@ -33,9 +33,10 @@ class ResolverLineMarkerProvider : SimpleLineMarkerProvider<PsiNamedElement>() {
         }
 
         //try to search by extends classes
-        for (x in psiClass.extendsList?.referenceElements!!) {
-            if (checkPsiClassImplResolver(x.resolve() as PsiClass)) {
-                return true
+        val extends = psiClass.extendsList
+        if (extends != null) {
+            return extends.referenceElements.any {
+                checkPsiClassImplResolver(it.resolve() as PsiClass)
             }
         }
         return false
