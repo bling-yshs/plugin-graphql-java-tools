@@ -36,7 +36,7 @@ class GraphqlLineMarkerProvider : SimpleLineMarkerProvider<PsiMethod>() {
         val typeName = findGraphqlFieldParentTypeName(from)
         if (interfaceClass != null) {
             val targetClasses = ClassInheritorsSearch.search(interfaceClass).filter {
-                gqlMatch(typeName, it.name!!)
+                gqlMatch(typeName, it)
             }
             val result: MutableList<PsiMethod> = mutableListOf()
 

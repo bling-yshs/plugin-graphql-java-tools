@@ -45,12 +45,12 @@ class ResolverLineMarkerProvider : SimpleLineMarkerProvider<PsiNamedElement>() {
     override fun search(from: PsiElement): Array<PsiNamedElement> {
         val result: MutableList<PsiNamedElement> = mutableListOf()
         val gqlSearchHelper = GraphQLPsiSearchHelper.getInstance(from.project)
-        val className = (from.parent as PsiMethod).containingClass?.name!!
+        val targetClass = (from.parent as PsiMethod).containingClass
         val searchName = from.text.substringAfter("get").lowercaseFirstLetter()
         gqlSearchHelper.processNamedElements(from, searchName) {
             if (it is GraphQLFieldDefinition) {
                 val typeName = findGraphqlFieldParentTypeName(it)
-                if (gqlMatch(typeName, className)) {
+                if (gqlMatch(typeName, targetClass)) {
                     result.add(it)
                 }
             }

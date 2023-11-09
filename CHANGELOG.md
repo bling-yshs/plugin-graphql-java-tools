@@ -1,6 +1,11 @@
 # Changelog
 
 
+## [1.0.2] - 2023-11-09
+
+### Added
+- Support matching by generic detection.
+
 ## [1.0.1] - 2023-11-02
 
 ### Fixed

@@ -19,3 +19,17 @@
 
 ***Thanks for the contribution of [Free MyBatis Tool](https://github.com/moztl/Free-Mybatis-Tool) @moztl @wuzhizhan*** 
 <!-- Plugin description end -->
+
+### 待实现
+[*]将匹配机制从名称约定改为泛型检测
+[ ]支持Type到Resolver类的跳转
+[ ]支持scalar/directive到Java实现的跳转
+[ ]支持enum/input到Java枚举类的跳转
+[ ]支持通过Schema字段生成JavaResolver代码
+
+### ToDo
+[*] Replace name convention-based matching mechanism with generic detection.
+[ ] Support navigation from Type to Resolver class.
+[ ] Support navigation from scalar/directive to Java implementation.
+[ ] Support navigation from enum/input to Java enum class.
+[ ] Generate Java Resolver code from Schema fields.
