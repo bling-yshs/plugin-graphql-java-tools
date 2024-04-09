@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.3] - 2024-04-09
+
+### Added
+- Support for IntelliJ IDEA 2024.1.
 
 ## [1.0.2] - 2023-11-09
 
