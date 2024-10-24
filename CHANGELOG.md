@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4] - 2024-10-24
+
+### Changed
+- Remove config: untilBuild.
+
 ## [1.0.3] - 2024-04-09
 
 ### Added
