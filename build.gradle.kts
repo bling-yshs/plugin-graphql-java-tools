@@ -45,14 +45,12 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("232")
-
+        untilBuild.set("243.*")
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription = """
-            <![CDATA[
             ${extractPluginDesc("README.md")}
             
             ${extractPluginDesc("README_zh.md")}
-            ]]>
         """.trimIndent()
     }
 
