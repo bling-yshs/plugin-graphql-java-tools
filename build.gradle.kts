@@ -25,6 +25,7 @@ intellij {
     downloadSources.set(true)
     // Read this: https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/
     plugins.set(listOf("com.intellij.java", "com.intellij.lang.jsgraphql:4.0.2"))
+    instrumentCode.set(false)
 }
 
 changelog {
@@ -45,7 +46,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("232")
-        untilBuild.set("243.*")
+        untilBuild.set("251.*")
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription = """
             ${extractPluginDesc("README.md")}
