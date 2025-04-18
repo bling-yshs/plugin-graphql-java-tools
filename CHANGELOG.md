@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.5] - 2025-04-18
+
+### Added
+- Support for IntelliJ IDEA 2025.1.
+
 ## [1.0.4] - 2024-10-24
 
 ### Changed
