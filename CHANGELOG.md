@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Upgrade the intellij plugin to version 2.x to support all future new IDEA releases
+
 ## [1.0.5] - 2025-04-18
 
 ### Added
